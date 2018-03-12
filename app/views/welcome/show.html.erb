@@ -1,0 +1,36 @@
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <!-- chamando biblioteca jquery -->
+<script>
+    function load_obj_json()
+    {   var container;
+        $.getJSON("/myjson.json", function(posts){
+            for (let post of posts) {
+
+                var div = document.createElement("div");
+                container =  document.getElementById("posts");
+                container.appendChild(div);
+                var p = document.createElement("p");
+                div.appendChild(p);
+                p.textContent = post.title;
+                var p2 = document.createElement("p");
+                div.appendChild(p2);
+                p2.textContent = post.text;
+
+            }
+        });
+    }
+
+    load_obj_json();
+</script>
+
+<div id="posts">
+    <!-- <div>
+        <p> Title: aopsdkaposdkaopdk
+        </p>
+        <p> Text: aopsdkaposdkaopdk
+        </p>
+    </div> -->
+</div>

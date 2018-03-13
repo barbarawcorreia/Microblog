@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'page/index' => 'posts#start'
+
   # Telas adm
   get 'posts/start' => 'posts#start'
   resources :posts

@@ -1,17 +1,16 @@
-<p>
-    Um por um
-</p>
+<h1 class="center-align">Conteúdo</h1>
+<div class="container">
+    <div class="input-field col s12">
+        Title:
+        <%= @post.title %>
+    </div>
 
-<p>
-    Title:
-    <%= @post.title %>
-</p>
+    <div class="input-field col s12">
+        Text:
+        <%= @post.text %>
+    </div>
 
-<p>
-    Text:
-    <%= @post.text %>
-</p>
+    <%= link_to 'Back', posts_start_path %>
+    <%= link_to 'Crie uma nova postagem', new_post_path %>
 
-<%= link_to 'Back', posts_start_path %>
-<%= link_to 'Crie uma nova postagem', new_post_path %>
-
+</div>

@@ -1,19 +1,21 @@
-<h1>Lugar de Criação das Postagens</h1>
+<h1 class="center-align">Lugar de Criação das Postagens</h1>
 
-<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+<div class="container">
 
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
+    <%= form_with scope: :post, url: posts_path,class:"row", local: true do |form| %>
 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
+        <div class="input-field col s12">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+        </div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+        <div class="input-field col s12">
+            <%= form.label :text %>
+            <%= form.text_area :text, class:"materialize-textarea" %>
+        </div>
+        <div class="col s12">
+        <button class="waves-effect waves-light btn" input type="submit" name"action">
+            Save Post  </button></div>
 
-<% end %>
+    <% end %>
+</div>

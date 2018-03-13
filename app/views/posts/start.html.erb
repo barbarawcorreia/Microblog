@@ -1,11 +1,9 @@
 <html>
-    <div>
-        <p>
-            <center>Crie suas postagens </center>
-
-            <%= link_to 'CRIE UMA NOVA POSTAGEM', new_post_path %><td>
-            <%= link_to 'ÚLTIMAS POSTAGENS', posts_path %></td>
-
-        </p>
+    <h1 class="center-align">Crie um post</h1>
+    <div class="container">
+        <div class="col s12 ">
+            <%= link_to 'CRIE UMA NOVA POSTAGEM', new_post_path, :class => "btn-large waves-effect " %>
+            <%= link_to 'ÚLTIMAS POSTAGENS', posts_path, :class => "btn-large waves-effect" %>
+        </div>
     </div>
 </html>

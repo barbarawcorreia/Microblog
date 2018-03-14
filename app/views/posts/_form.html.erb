@@ -1,0 +1,22 @@
+<div class="container">
+
+    <%#= form_with scope: :post, url: posts_path,class:"row", local: true do |form| %>
+     <%= form_for @post, class:"row" do |form| %>
+
+        <div class="input-field col s12">
+            <%= form.label :title %>
+            <%= form.text_field :title %>
+        </div>
+
+        <div class="input-field col s12">
+            <%= form.label :text %>
+            <%= form.text_area :text, class:"materialize-textarea" %>
+        </div>
+
+        <div class="col s12">
+            <button class="waves-effect waves-light btn" type="submit" name"action">
+             Save Post  </button>
+        </div>
+
+    <% end %>
+</div>

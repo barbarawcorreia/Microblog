@@ -1,16 +1,19 @@
 <h1 class="center-align">Conteúdo</h1>
 <div class="container">
-    <div class="input-field col s12">
-        Title:
-        <%= @post.title %>
+    <div class="card pink lighten-3">
+        <div class="card-content white-text">
+            <div class="input-field col s12 m6">
+                Title:
+                <%= @post.title %>
+            </div>
+
+            <div class="input-field col s12 m6">
+                Text:
+                <%= @post.text %>
+            </div>
+
+            <%= link_to 'Back', posts_start_path %>
+            <%= link_to 'Crie uma nova postagem', new_post_path %>
+        </div>
     </div>
-
-    <div class="input-field col s12">
-        Text:
-        <%= @post.text %>
-    </div>
-
-    <%= link_to 'Back', posts_start_path %>
-    <%= link_to 'Crie uma nova postagem', new_post_path %>
-
 </div>

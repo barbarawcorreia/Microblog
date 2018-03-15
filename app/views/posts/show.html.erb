@@ -1,19 +1,24 @@
-<h1 class="center-align">Conteúdo</h1>
+<div>
+    <h3 class="center-align condensed light">CONTENT</h3>
+</div>
+
 <div class="container">
-    <div class="card pink lighten-3">
-        <div class="card-content white-text">
-            <div class="input-field col s12 m6">
+    <div class="card pink lighten-3 col s12 m6">
+        <div class="card-content white-text col s12 m6">
+            <div class="input-field col s12 m6 center-align">
                 Title:
                 <%= @post.title %>
             </div>
 
-            <div class="input-field col s12 m6">
+            <div class="input-field col s12 m6 center-align">
                 Text:
                 <%= @post.text %>
             </div>
-
-            <%= link_to 'Back', posts_start_path %>
-            <%= link_to 'Crie uma nova postagem', new_post_path %>
+            <div class="col s12 center-align">
+                <%= link_to 'Back to home', posts_start_path, :class => "btn waves-effect  pink darken-4 bold " %>
+                <%= link_to 'Back to list', posts_path, :class => "btn waves-effect  pink darken-4 bold " %>
+                <%= link_to 'Create a new post', new_post_path, :class => "btn waves-effect  pink darken-4 bold" %>
+            </div>
         </div>
     </div>
 </div>

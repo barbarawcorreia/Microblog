@@ -13,16 +13,23 @@
                 <td>
                     <%= post.title %>
                 </td>
+
                 <td>
                     <%= post.text %>
                 </td>
 
                 <td>
+                    <%= link_to 'Back', posts_start_path %>
+                </td>
+
+                <td>
                     <%= link_to 'Show', post_path(post)%>
                 </td>
+
                 <td>
                     <%= link_to 'Edit', edit_post_path(post) %>
                 </td>
+
                 <td>
                     <%= link_to 'Destroy', post_path(post),
             method: :delete,
@@ -35,15 +42,23 @@
     </table>
 
     <ul class="pagination">
-        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <li class="disabled">
+            <a href="#!">
+                <i class="material-icons">chevron_left</i>
+            </a>
+        </li>
         <% @posts.total_pages.times do |current_page| %>
-            <li class="waves-effect" >
+            <li class="waves-effect">
                 <a href="/posts?page=<%=current_page + 1%>">
                     <%=current_page + 1%>
                 </a>
             </li>
             <% end %>
-        <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                <li class="disabled">
+                    <a href="#!">
+                        <i class="material-icons">chevron_right</i>
+                    </a>
+                </li>
     </ul>
 
 </div>

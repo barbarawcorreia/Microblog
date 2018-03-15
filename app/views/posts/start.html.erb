@@ -1,9 +1,14 @@
 <html>
-    <h1 class="center-align">Crie um post</h1>
+    <div>
+        <h2 class="center-align condensed light">CREATE YOUR POST </h2>
+    </div>
+    <div class="center-align ">
+        <%= image_tag  "https://www.elegantthemes.com/blog/wp-content/uploads/2017/01/sharing-wordpress-posts.jpg" %>
+    </div>
     <div class="container">
-        <div class="col s12 ">
-            <%= link_to 'CRIE UMA NOVA POSTAGEM', new_post_path, :class => "btn-large waves-effect " %>
-            <%= link_to 'ÚLTIMAS POSTAGENS', posts_path, :class => "btn-large waves-effect" %>
+        <div class="col s12 center-align">
+            <%= link_to 'CRIE UMA NOVA POSTAGEM', new_post_path, :class => "btn-large waves-effect pink darken-4 bold" %>
+            <%= link_to 'ÚLTIMAS POSTAGENS', posts_path, :class => "btn-large waves-effect pink darken-4 bold" %>
         </div>
     </div>
 </html>

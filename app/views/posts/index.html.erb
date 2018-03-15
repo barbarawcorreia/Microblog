@@ -1,24 +1,49 @@
 <!-- Mostrar todas as suas postagens com botão de editar e deletar -->
 <div class="container">
+
     <table class="bordered">
         <tr>
             <th>Title</th>
             <th>Text</th>
             <th>Options</th>
         </tr>
-    <% @posts.each do |post| %>
+        <% @posts.each do |post| %>
 
-        <tr>
-            <td><%= post.title %></td>
-            <td><%= post.text %></td>
+            <tr>
+                <td>
+                    <%= post.title %>
+                </td>
+                <td>
+                    <%= post.text %>
+                </td>
 
-            <td><%= link_to 'Show', post_path(post)%></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post_path(post),
+                <td>
+                    <%= link_to 'Show', post_path(post)%>
+                </td>
+                <td>
+                    <%= link_to 'Edit', edit_post_path(post) %>
+                </td>
+                <td>
+                    <%= link_to 'Destroy', post_path(post),
             method: :delete,
-            data: { confirm: 'Are you sure?' } %> </td>
-        </tr>
-    <% end %>
+            data: { confirm: 'Are you sure?' } %>
+                </td>
+            </tr>
+
+            <% end %>
 
     </table>
+
+    <ul class="pagination">
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+        <% @posts.total_pages.times do |current_page| %>
+            <li class="waves-effect" >
+                <a href="/posts?page=<%=current_page + 1%>">
+                    <%=current_page + 1%>
+                </a>
+            </li>
+            <% end %>
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+
 </div>

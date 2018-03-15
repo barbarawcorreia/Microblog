@@ -16,6 +16,6 @@ Rails.application.routes.draw do
 
   # get 'myjson' => 'posts#myjson'
   # get 'getmyjson' => 'posts#getmyjson'
-  # get 'myjson' => 'welcome#myjson'
+  get 'myjson' => 'welcome#myjson'
   # get 'posts/:id' => 'posts#edit'
 end

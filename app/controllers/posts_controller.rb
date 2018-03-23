@@ -50,14 +50,10 @@ class PostsController < ApplicationController
 
   end
 
-  # def myjson
-  #   @post = Post.find(params[:id])
-
-  #   respond_to do |format|
-  #     format.html
-  #     format.json { render json: @post }
-  #   end
-  # end
+  def count_like
+    @post = Post.find(params[:id])
+    # pega o id do post e
+  end
 
   private
     def post_params

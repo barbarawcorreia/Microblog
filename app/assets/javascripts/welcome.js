@@ -25,9 +25,38 @@ function load_posts() {
             div.appendChild(p);
             p.textContent = 'TEXT: ' + post.text;
 
+            var bt = document.createElement("button");
+            div.appendChild(bt);
+            bt.className = "curtir blue darken-4";
+            bt.textContent = 'LIKE : ' + likes;
+            bt.onclick = count_likes;
+
+            var bt2 = document.createElement("button");
+            div.appendChild(bt2);
+            bt2.className = "descurtir red darken-4";
+            bt2.textContent = 'DISLIKE : ' + likes;
+            bt2.onclick = count_dislikes;
+
+
+
         }
-    window.scroll(0,130000);
+        window.scroll(0, 130000);
     });
 
 }
+
+let likes = 0;
+let count = 0;
+
+function count_likes() {
+    likes++;
+}
+
+function count_dislikes() {
+    if(likes > 0)
+    {
+        likes--;
+    }
+}
+
 document.getElementsByClassName("open-blog")[0].onclick = load_posts;

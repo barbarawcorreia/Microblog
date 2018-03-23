@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   # get 'myjson' => 'posts#myjson'
   # get 'getmyjson' => 'posts#getmyjson'
-  get 'myjson' => 'welcome#myjson'
+  get 'myposts' => 'welcome#myposts' # rota de exibição
+  get 'myposts/:id/like' => 'welcome#like' # rota de exibição
+  post 'myposts/:id/like' => 'welcome#like'  # rota de ação
+  get 'myposts/:id/dislike' => 'welcome#dislike' # rota de acão
+  post 'myposts/:id/dislike' => 'welcome#dislike'  # rota de ação
+
   # get 'posts/:id' => 'posts#edit'
 end

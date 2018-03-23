@@ -2,7 +2,7 @@ function load_posts() {
     var container;
     var cards_element = document.getElementById("cards"); // Pega cards como Pai do elemento que será criado dentro dele card
 
-    $.getJSON("/myjson.json", function (posts) {
+    $.getJSON("/myposts.json", function (posts) {
         for (let post of posts) {
 
             var card = document.createElement("div");
@@ -37,8 +37,6 @@ function load_posts() {
             bt2.textContent = 'DISLIKE : ' + likes;
             bt2.onclick = count_dislikes;
 
-
-
         }
         window.scroll(0, 130000);
     });
@@ -53,8 +51,7 @@ function count_likes() {
 }
 
 function count_dislikes() {
-    if(likes > 0)
-    {
+    if (likes > 0) {
         likes--;
     }
 }

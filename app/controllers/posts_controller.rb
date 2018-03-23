@@ -50,10 +50,10 @@ class PostsController < ApplicationController
 
   end
 
-  def count_like
-    @post = Post.find(params[:id])
-    # pega o id do post e
-  end
+  # def count_like
+  #   @post = Post.find(params[:id])
+  #   # pega o id do post e
+  # end
 
   private
     def post_params

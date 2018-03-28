@@ -3,8 +3,8 @@ class CreatePosts < ActiveRecord::Migration[5.1]
     create_table :posts do |t|
       t.string :title
       t.string :text
-      t.integer :like
-      t.integer :dislike
+      t.integer :like,null: false, default: '0'
+      t.integer :dislike,null: false, default: '0'
 
       t.timestamps
     end

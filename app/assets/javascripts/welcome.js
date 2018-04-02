@@ -28,50 +28,44 @@ class Post {
         var bt = document.createElement("button");
         div.appendChild(bt);
         bt.className = "curtir blue darken-4";
-        bt.textContent = 'LIKE : '+ this.post.like;
+        bt.textContent = 'LIKE : ' + this.post.like;
         bt.onclick = this.count_likes.bind(this);
 
         var bt2 = document.createElement("button");
         div.appendChild(bt2);
         bt2.className = "descurtir red darken-4";
-        bt2.textContent = 'DISLIKE : '+ this.post.dislike;
+        bt2.textContent = 'DISLIKE : ' + this.post.dislike;
         bt2.onclick = this.count_dislikes.bind(this);
 
         return this.card;
     }
 
-    // count_likes() {
-    //     $.ajax("/myposts/"+this.post.id+"/like.json",{method: "PUT",dataType: "json"}, (post)  => {
-    //         this.post = post; // atualiza a propriedade do post
-    //         this.render();
-
-    //     });
-    // }
-
-    count_likes()
-    {
-        $.ajax({
-            url: "/myposts/"+this.post.id+"/like.json",
-            dataType: 'json', method: "PUT",
-            success: (post) => {
-                this.post = post; // atualiza a propriedade do post
-                this.render();
-            }
-        });
+    count_likes() {
+        const URL_TO_FETCH = "/myposts/" + this.post.id + "/like.json";
+        fetch(URL_TO_FETCH, {
+                method: 'put'
+            })
+            .then((response) => {
+                response.json().then((post) => {
+                    this.post = post;
+                    this.render();
+                });
+            })
     }
 
-    count_dislikes()
-    {
-        $.ajax({
-            url: "/myposts/"+this.post.id+"/dislike.json",
-            dataType: 'json', method: "PUT",
-            success: (post) =>{
-                this.post = post;
-                this.render();
-            }
-        });
-    }
 
+    count_dislikes() {
+        const URL_TO_FETCH = "/myposts/" + this.post.id + "/dislike.json";
+        fetch(URL_TO_FETCH, {
+                method: 'put'
+            })
+            .then((response) => {
+                response.json().then((post) => {
+                    this.post = post;
+                    this.render();
+                });
+            })
+    }
 
 }
 
@@ -88,13 +82,5 @@ function load_posts() {
         window.scroll(0, 130000);
     });
 }
-
-// function load_opinion (){
-// $.getJSON("/myposts/:id/like", function (posts) {
-//     for (let post of posts) {
-//         // imprimir like, imprimir dislike
-//     }
-// });
-// }
 
 document.getElementsByClassName("open-blog")[0].onclick = load_posts;

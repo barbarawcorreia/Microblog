@@ -40,22 +40,39 @@ class Post {
         return this.card;
     }
 
-    count_likes() {
-        $.getJSON("/myposts/"+this.post.id+"/like.json", (post) => {
-            this.post = post; // atualiza a propriedade do post
-            this.render();
+    // count_likes() {
+    //     $.ajax("/myposts/"+this.post.id+"/like.json",{method: "PUT",dataType: "json"}, (post)  => {
+    //         this.post = post; // atualiza a propriedade do post
+    //         this.render();
 
+    //     });
+    // }
+
+    count_likes()
+    {
+        $.ajax({
+            url: "/myposts/"+this.post.id+"/like.json",
+            dataType: 'json', method: "PUT",
+            success: (post) => {
+                this.post = post; // atualiza a propriedade do post
+                this.render();
+            }
         });
     }
 
-    count_dislikes() {
-        // console.info('disliking', this.post.dislike);
-        $.getJSON("/myposts/"+this.post.id+"/dislike.json", (post) => {
-            this.post = post; // atualiza a propriedade do post
-            this.render();
-
+    count_dislikes()
+    {
+        $.ajax({
+            url: "/myposts/"+this.post.id+"/dislike.json",
+            dataType: 'json', method: "PUT",
+            success: (post) =>{
+                this.post = post;
+                this.render();
+            }
         });
     }
+
+
 }
 
 function load_posts() {
@@ -72,12 +89,12 @@ function load_posts() {
     });
 }
 
-function load_opinion (){
-$.getJSON("/myposts/:id/like", function (posts) {
-    for (let post of posts) {
-        // imprimir like, imprimir dislike
-    }
-});
-}
+// function load_opinion (){
+// $.getJSON("/myposts/:id/like", function (posts) {
+//     for (let post of posts) {
+//         // imprimir like, imprimir dislike
+//     }
+// });
+// }
 
 document.getElementsByClassName("open-blog")[0].onclick = load_posts;

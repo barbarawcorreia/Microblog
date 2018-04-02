@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get 'welcome/show' => 'welcome#show'
 
   get 'myposts' => 'welcome#myposts' # rota de exibição
-  get 'myposts/:id/like' => 'welcome#like' # rota de exibição
+  put 'myposts/:id/like' => 'welcome#like' # rota de exibição
   post 'myposts/:id/like' => 'welcome#like'  # rota de ação
-  get 'myposts/:id/dislike' => 'welcome#dislike' # rota de acão
+  put 'myposts/:id/dislike' => 'welcome#dislike' # rota de acão
   post 'myposts/:id/dislike' => 'welcome#dislike'  # rota de ação
 
 end

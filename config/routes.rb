@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   put 'myposts/:id/dislike' => 'welcome#dislike' # rota de acão
   post 'myposts/:id/dislike' => 'welcome#dislike'  # rota de ação
 
+  resources :posts do
+    resources :comments
+  end
+
 end
